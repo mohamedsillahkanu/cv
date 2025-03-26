@@ -4,253 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohamed Sillah Kanu - CV Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f3f4f6;
-    }
-    .container {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 1.5rem;
-    }
-    .header {
-      background-color: #1d4ed8;
-      color: white;
-      padding: 1.5rem;
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .header-title h1 {
-      font-size: 1.875rem;
-      font-weight: bold;
-      margin: 0;
-    }
-    .header-title p {
-      color: #bfdbfe;
-      margin-top: 0.25rem;
-    }
-    .header-contact {
-      text-align: right;
-      font-size: 0.875rem;
-    }
-    .header-contact p {
-      margin: 0.25rem 0;
-    }
-    .main-content {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-    .card {
-      background-color: white;
-      padding: 1rem;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-    }
-    .card-title {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: #1d4ed8;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-    .education-item {
-      margin-bottom: 0.75rem;
-    }
-    .education-degree {
-      font-weight: bold;
-      color: #2563eb;
-    }
-    .education-school {
-      font-size: 0.875rem;
-    }
-    .education-year {
-      font-size: 0.75rem;
-      color: #6b7280;
-    }
-    .publications-circle {
-      width: 9rem;
-      height: 9rem;
-      border-radius: 50%;
-      background-color: #dbeafe;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 4px solid #3b82f6;
-      margin: 0 auto;
-    }
-    .publications-number {
-      font-size: 1.875rem;
-      font-weight: bold;
-      color: #1d4ed8;
-    }
-    .publications-text {
-      font-size: 0.75rem;
-      text-align: center;
-      color: #1e40af;
-    }
-    .publications-details {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-    }
-    .publications-detail {
-      text-align: center;
-    }
-    .publications-detail-number {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #2563eb;
-    }
-    .publications-detail-text {
-      font-size: 0.75rem;
-    }
-    .memberships-list {
-      list-style-type: disc;
-      list-style-position: inside;
-      font-size: 0.875rem;
-    }
-    .memberships-list li {
-      margin-bottom: 0.25rem;
-    }
-    .skills-category {
-      margin-bottom: 1.5rem;
-    }
-    .skills-category-title {
-      font-weight: bold;
-      color: #2563eb;
-      margin-bottom: 0.5rem;
-    }
-    .skill-item {
-      margin-bottom: 0.5rem;
-    }
-    .skill-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.25rem;
-    }
-    .skill-name {
-      font-size: 0.875rem;
-    }
-    .skill-level {
-      font-size: 0.875rem;
-      color: #6b7280;
-    }
-    .skill-bar-bg {
-      width: 100%;
-      background-color: #e5e7eb;
-      border-radius: 9999px;
-      height: 0.5rem;
-    }
-    .skill-bar-fill {
-      background-color: #2563eb;
-      height: 0.5rem;
-      border-radius: 9999px;
-    }
-    .experience-container {
-      position: relative;
-      padding-left: 2rem;
-    }
-    .experience-container::before {
+    /* Timeline style for experience section */
+    .timeline-before::before {
       content: '';
       position: absolute;
-      left: 0.75rem;
-      top: 0.5rem;
-      bottom: 0.5rem;
-      width: 0.125rem;
+      left: 3px;
+      top: 2px;
+      bottom: 2px;
+      width: 0.5px;
       background-color: #bfdbfe;
-    }
-    .experience-item {
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-    .experience-circle {
-      position: absolute;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-color: #3b82f6;
-      border-radius: 50%;
-      left: -2.25rem;
-      top: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .experience-circle-inner {
-      width: 0.75rem;
-      height: 0.75rem;
-      background-color: white;
-      border-radius: 50%;
-    }
-    .experience-header {
-      display: flex;
-      justify-content: space-between;
-    }
-    .experience-role {
-      font-weight: bold;
-      color: #2563eb;
-    }
-    .experience-duration {
-      font-size: 0.75rem;
-      background-color: #dbeafe;
-      color: #1d4ed8;
-      padding: 0.25rem 0.5rem;
-      border-radius: 0.25rem;
-    }
-    .experience-company {
-      font-size: 0.875rem;
-    }
-    .experience-description {
-      font-size: 0.75rem;
-      color: #4b5563;
-      margin-top: 0.25rem;
-    }
-    .footer {
-      margin-top: 1.5rem;
-      background-color: #1e40af;
-      color: white;
-      padding: 0.75rem;
-      border-bottom-left-radius: 0.5rem;
-      border-bottom-right-radius: 0.5rem;
-      text-align: center;
-      font-size: 0.875rem;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="flex flex-col bg-gray-100 p-6 min-h-screen">
     <!-- Header -->
-    <div class="header">
-      <div class="header-content">
-        <div class="header-title">
-          <h1>Mohamed Sillah Kanu</h1>
-          <p>Data Scientist | Statistician | Software Engineer</p>
+    <div class="bg-blue-700 text-white p-6 rounded-t-lg shadow-lg">
+      <div class="flex justify-between items-center">
+        <div>
+          <h1 class="text-3xl font-bold">Mohamed Sillah Kanu</h1>
+          <p class="text-blue-100 mt-1">Data Scientist | Statistician | Software Engineer</p>
         </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>References available upon request</p>
-    </div>
-  </div>
-</body>
-</html>
-        <div class="header-contact">
+        <div class="text-right text-sm">
           <p>Chicago, IL</p>
           <p>sillahmohamedkanu@gmail.com</p>
           <p>+1 240-889-6759</p>
@@ -259,13 +36,15 @@
     </div>
 
     <!-- Main content -->
-    <div class="main-content">
+    <div class="grid grid-cols-3 gap-6 mt-6">
       <!-- Left column -->
-      <div>
+      <div class="col-span-1">
         <!-- Professional Summary -->
-        <div class="card">
-          <h2 class="card-title">Professional Summary</h2>
-          <p style="font-size: 0.875rem;">
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-3">
+            Professional Summary
+          </h2>
+          <p class="text-sm">
             Highly skilled Data Scientist, Statistician, and Software Engineer with extensive
             experience in data analytics, predictive modeling, and software development.
             Currently applying advanced data analytics in epidemiology and public health research
@@ -274,291 +53,313 @@
         </div>
 
         <!-- Education -->
-        <div class="card">
-          <h2 class="card-title">Education</h2>
-          <div class="education-item">
-            <p class="education-degree">M.S. Data Science</p>
-            <p class="education-school">The George Washington University, USA</p>
-            <p class="education-year">2022</p>
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-3">
+            Education
+          </h2>
+          <div class="mb-3">
+            <p class="font-bold text-blue-600">M.S. Data Science</p>
+            <p class="text-sm">The George Washington University, USA</p>
+            <p class="text-xs text-gray-500">2022</p>
           </div>
-          <div class="education-item">
-            <p class="education-degree">M.S. Statistics</p>
-            <p class="education-school">Fourah Bay College, University of Sierra Leone</p>
-            <p class="education-year">2020</p>
+          <div class="mb-3">
+            <p class="font-bold text-blue-600">M.S. Statistics</p>
+            <p class="text-sm">Fourah Bay College, University of Sierra Leone</p>
+            <p class="text-xs text-gray-500">2020</p>
           </div>
-          <div class="education-item">
-            <p class="education-degree">B.S. Software Engineering</p>
-            <p class="education-school">Limkokwing University, Malaysia</p>
-            <p class="education-year">2018</p>
+          <div class="mb-3">
+            <p class="font-bold text-blue-600">B.S. Software Engineering</p>
+            <p class="text-sm">Limkokwing University, Malaysia</p>
+            <p class="text-xs text-gray-500">2018</p>
           </div>
-          <div class="education-item">
-            <p class="education-degree">B.S. Mathematics & Statistics</p>
-            <p class="education-school">Fourah Bay College, University of Sierra Leone</p>
-            <p class="education-year">2016</p>
-          </div>
-        </div>
-
-        <!-- Professional Experience -->
-        <div class="card">
-          <h2 class="card-title">Professional Experience</h2>
-          <div class="experience-container">
-            <div class="experience-item">
-              <div class="experience-circle">
-                <div class="experience-circle-inner"></div>
-              </div>
-              <div>
-                <div class="experience-header">
-                  <h3 class="experience-role">Research Data Analyst Associate</h3>
-                  <span class="experience-duration">2024 - Present</span>
-                </div>
-                <p class="experience-company">Northwestern University - Chicago, IL</p>
-                <p class="experience-description">Conduct statistical analyses for epidemiological research and develop predictive models for public health data.</p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-circle">
-                <div class="experience-circle-inner"></div>
-              </div>
-              <div>
-                <div class="experience-header">
-                  <h3 class="experience-role">CEO & Founder</h3>
-                  <span class="experience-duration">2022 - Present</span>
-                </div>
-                <p class="experience-company">Informatics Consultancy Firm-Sierra Leone - Sierra Leone</p>
-                <p class="experience-description">Lead data-driven projects for government agencies and NGOs.</p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-circle">
-                <div class="experience-circle-inner"></div>
-              </div>
-              <div>
-                <div class="experience-header">
-                  <h3 class="experience-role">Malaria Epidemiologist</h3>
-                  <span class="experience-duration">2024</span>
-                </div>
-                <p class="experience-company">World Health Organization (WHO) - Sierra Leone</p>
-                <p class="experience-description">Led malaria surveillance programs and data-driven interventions.</p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-circle">
-                <div class="experience-circle-inner"></div>
-              </div>
-              <div>
-                <div class="experience-header">
-                  <h3 class="experience-role">Program Manager</h3>
-                  <span class="experience-duration">2022 - 2023</span>
-                </div>
-                <p class="experience-company">FOCUS 1000 - Sierra Leone</p>
-                <p class="experience-description">Oversaw Malaria, HIV & TB (NFM-3 Project) implementation and reporting.</p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-circle">
-                <div class="experience-circle-inner"></div>
-              </div>
-              <div>
-                <div class="experience-header">
-                  <h3 class="experience-role">Mathematics & Statistics Lecturer</h3>
-                  <span class="experience-duration">2021 - 2023</span>
-                </div>
-                <p class="experience-company">University of Sierra Leone - Sierra Leone</p>
-                <p class="experience-description">Taught undergraduate courses in Mathematics and Statistics.</p>
-              </div>
-            </div>
+          <div class="mb-3">
+            <p class="font-bold text-blue-600">B.S. Mathematics & Statistics</p>
+            <p class="text-sm">Fourah Bay College, University of Sierra Leone</p>
+            <p class="text-xs text-gray-500">2016</p>
           </div>
         </div>
 
         <!-- Publications -->
-        <div class="card">
-          <h2 class="card-title">Publications</h2>
-          <div class="publications-circle">
-            <span class="publications-number">65</span>
-            <span class="publications-text">Books Published</span>
-          </div>
-          <div class="publications-details">
-            <div class="publications-detail">
-              <span class="publications-detail-number">50</span>
-              <p class="publications-detail-text">Math Textbooks</p>
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-3">
+            Publications
+          </h2>
+          <div class="flex justify-center">
+            <div class="w-36 h-36 rounded-full bg-blue-100 flex flex-col items-center justify-center border-4 border-blue-500">
+              <span class="text-3xl font-bold text-blue-700">65</span>
+              <span class="text-xs text-center text-blue-800">Books Published</span>
             </div>
-            <div class="publications-detail">
-              <span class="publications-detail-number">15</span>
-              <p class="publications-detail-text">Children's Books</p>
+          </div>
+          <div class="flex justify-between mt-4">
+            <div class="text-center">
+              <span class="text-2xl font-bold text-blue-600">50</span>
+              <p class="text-xs">Math Textbooks</p>
+            </div>
+            <div class="text-center">
+              <span class="text-2xl font-bold text-blue-600">15</span>
+              <p class="text-xs">Children's Books</p>
             </div>
           </div>
         </div>
 
         <!-- Memberships -->
-        <div class="card">
-          <h2 class="card-title">Professional Memberships</h2>
-          <ul class="memberships-list">
-            <li>Data Science Association, Washington DC</li>
-            <li>International Network of Researchers</li>
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-3">
+            Professional Memberships
+          </h2>
+          <ul class="list-disc list-inside text-sm">
+            <li class="mb-1">Data Science Association, Washington DC</li>
+            <li class="mb-1">International Network of Researchers</li>
           </ul>
         </div>
       </div>
 
       <!-- Middle and right columns -->
-      <div>
+      <div class="col-span-2">
         <!-- Technical Skills -->
-        <div class="card">
-          <h2 class="card-title">Technical Skills</h2>
-          <div>
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-3">
+            Technical Skills
+          </h2>
+          <div class="space-y-6">
             <!-- Programming Languages -->
-            <div class="skills-category">
-              <h3 class="skills-category-title">Programming Languages</h3>
-              <div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Python</span>
-                    <span class="skill-level">95%</span>
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2">Programming Languages</h3>
+              <div class="space-y-2">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Python</span>
+                    <span class="text-sm text-gray-500">95%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">R</span>
-                    <span class="skill-level">90%</span>
-                  </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 90%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">JavaScript</span>
-                    <span class="skill-level">85%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">R</span>
+                    <span class="text-sm text-gray-500">90%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 85%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Java</span>
-                    <span class="skill-level">80%</span>
-                  </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 80%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">C++</span>
-                    <span class="skill-level">75%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">JavaScript</span>
+                    <span class="text-sm text-gray-500">85%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 75%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">PHP</span>
-                    <span class="skill-level">70%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Java</span>
+                    <span class="text-sm text-gray-500">80%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 70%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">C++</span>
+                    <span class="text-sm text-gray-500">75%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">PHP</span>
+                    <span class="text-sm text-gray-500">70%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 70%"></div>
                   </div>
                 </div>
               </div>
             </div>
-
+            
             <!-- Data Science -->
-            <div class="skills-category">
-              <h3 class="skills-category-title">Data Science</h3>
-              <div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Machine Learning</span>
-                    <span class="skill-level">95%</span>
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2">Data Science</h3>
+              <div class="space-y-2">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Machine Learning</span>
+                    <span class="text-sm text-gray-500">95%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 95%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Statistical Analysis</span>
-                    <span class="skill-level">95%</span>
-                  </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 95%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Data Visualization</span>
-                    <span class="skill-level">90%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Statistical Analysis</span>
+                    <span class="text-sm text-gray-500">95%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Predictive Modeling</span>
-                    <span class="skill-level">90%</span>
-                  </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 90%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 95%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Deep Learning</span>
-                    <span class="skill-level">85%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Data Visualization</span>
+                    <span class="text-sm text-gray-500">90%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 85%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Predictive Modeling</span>
+                    <span class="text-sm text-gray-500">90%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Deep Learning</span>
+                    <span class="text-sm text-gray-500">85%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
                   </div>
                 </div>
               </div>
             </div>
-
+            
             <!-- Databases & Cloud -->
-            <div class="skills-category">
-              <h3 class="skills-category-title">Databases & Cloud</h3>
-              <div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">SQL</span>
-                    <span class="skill-level">90%</span>
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2">Databases & Cloud</h3>
+              <div class="space-y-2">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">SQL</span>
+                    <span class="text-sm text-gray-500">90%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 90%"></div>
-                  </div>
-                </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">MySQL</span>
-                    <span class="skill-level">85%</span>
-                  </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 85%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">AWS</span>
-                    <span class="skill-level">80%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">MySQL</span>
+                    <span class="text-sm text-gray-500">85%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 80%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 85%"></div>
                   </div>
                 </div>
-                <div class="skill-item">
-                  <div class="skill-header">
-                    <span class="skill-name">Azure</span>
-                    <span class="skill-level">75%</span>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">AWS</span>
+                    <span class="text-sm text-gray-500">80%</span>
                   </div>
-                  <div class="skill-bar-bg">
-                    <div class="skill-bar-fill" style="width: 75%"></div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Azure</span>
+                    <span class="text-sm text-gray-500">75%</span>
+                  </div>
+                  <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-blue-600 h-2 rounded-full" style="width: 75%"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Professional Experience -->
+        <div class="bg-white p-4 rounded-lg shadow-md">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-3">
+            Professional Experience
+          </h2>
+          <div class="relative pl-8 space-y-6 timeline-before">
+            <div class="relative">
+              <div class="absolute w-6 h-6 bg-blue-500 rounded-full left-[-30px] top-0 flex items-center justify-center">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="font-bold text-blue-600">Research Data Analyst Associate</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded">2024 - Present</span>
+                </div>
+                <p class="text-sm">Northwestern University - Chicago, IL</p>
+                <p class="text-xs text-gray-600 mt-1">Conduct statistical analyses for epidemiological research and develop predictive models for public health data.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute w-6 h-6 bg-blue-500 rounded-full left-[-30px] top-0 flex items-center justify-center">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="font-bold text-blue-600">CEO & Founder</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded">2022 - Present</span>
+                </div>
+                <p class="text-sm">Informatics Consultancy Firm-Sierra Leone - Sierra Leone</p>
+                <p class="text-xs text-gray-600 mt-1">Lead data-driven projects for government agencies and NGOs.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute w-6 h-6 bg-blue-500 rounded-full left-[-30px] top-0 flex items-center justify-center">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="font-bold text-blue-600">Malaria Epidemiologist</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded">2024</span>
+                </div>
+                <p class="text-sm">World Health Organization (WHO) - Sierra Leone</p>
+                <p class="text-xs text-gray-600 mt-1">Led malaria surveillance programs and data-driven interventions.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute w-6 h-6 bg-blue-500 rounded-full left-[-30px] top-0 flex items-center justify-center">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="font-bold text-blue-600">Program Manager</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded">2022 - 2023</span>
+                </div>
+                <p class="text-sm">FOCUS 1000 - Sierra Leone</p>
+                <p class="text-xs text-gray-600 mt-1">Oversaw Malaria, HIV & TB (NFM-3 Project) implementation and reporting.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute w-6 h-6 bg-blue-500 rounded-full left-[-30px] top-0 flex items-center justify-center">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <div class="flex justify-between">
+                  <h3 class="font-bold text-blue-600">Mathematics & Statistics Lecturer</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded">2021 - 2023</span>
+                </div>
+                <p class="text-sm">University of Sierra Leone - Sierra Leone</p>
+                <p class="text-xs text-gray-600 mt-1">Taught undergraduate courses in Mathematics and Statistics.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-6 bg-blue-800 text-white p-3 rounded-b-lg text-center text-sm">
+      <p>References available upon request</p>
+    </div>
+  </div>
+</body>
+</html>
