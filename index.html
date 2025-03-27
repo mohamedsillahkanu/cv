@@ -1,4 +1,539 @@
-<body class="bg-gray-100">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Sillah Kanu - CV</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .page-content {
+      padding: 10mm;
+    }
+    
+    .badge {
+      background-color: #3b82f6;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      display: inline-block;
+      margin: 2px;
+    }
+    
+    .skill-badge {
+      background-color: #3b82f6;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      display: inline-block;
+      margin: 2px;
+    }
+    
+    .project-badge {
+      background-color: #dbeafe;
+      color: #1e40af;
+      padding: 3px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      display: inline-block;
+      margin: 2px;
+    }
+    
+    .section {
+      margin-bottom: 15px;
+    }
+    
+    .section-title {
+      color: #1d4ed8;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .section-title i {
+      margin-right: 5px;
+    }
+    
+    .experience-item {
+      border-left: 2px solid #3b82f6;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .date-badge {
+      background-color: #dbeafe;
+      color: #1e40af;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-size: 11px;
+      display: inline-block;
+    }
+    
+    .print-break {
+      page-break-before: always;
+    }
+    
+    @page {
+      size: A4;
+      margin: 0;
+    }
+    
+    @media print {
+      body {
+        background-color: white;
+      }
+      
+      .page {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        box-shadow: none;
+      }
+      
+      .badge, .skill-badge, .project-badge, .date-badge {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      
+      .print-break {
+        page-break-before: always;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- First Page -->
+  <div class="page">
+    <div class="bg-blue-700 text-white p-6">
+      <div class="flex justify-between items-center">
+        <div>
+          <h1 class="text-3xl font-bold">Mohamed Sillah Kanu</h1>
+          <p class="text-blue-100">Data Scientist | Statistician | Software Engineer</p>
+        </div>
+        <div class="text-right">
+          <p><a href="https://mohamedsillahkanu.github.io/portfolio/" class="text-white" target="_blank"><i class="fas fa-globe mr-2"></i>mohamedsillahkanu.github.io/portfolio</a></p>
+          <p><a href="mailto:sillahmohamedkanu@gmail.com" class="text-white"><i class="fas fa-envelope mr-2"></i>sillahmohamedkanu@gmail.com</a></p>
+          <p><a href="tel:+12408896759" class="text-white"><i class="fas fa-phone mr-2"></i>+1 240-889-6759</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="page-content">
+      <div class="grid grid-cols-3 gap-6">
+        <!-- Left column -->
+        <div class="col-span-1">
+          <!-- Professional Summary -->
+          <div class="section">
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> Professional Summary</h2>
+            <p class="text-sm">
+              Highly skilled Data Scientist, Statistician, and Software Engineer with extensive
+              experience in data analytics, predictive modeling, and software development.
+              Currently applying advanced data analytics in epidemiology and public health research
+              at Northwestern University, with a focus on developing innovative solutions for complex health challenges.
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="mb-3">
+              <p class="font-bold text-blue-600">M.S. Data Science</p>
+              <p class="text-sm">The George Washington University, USA</p>
+              <p class="text-xs text-gray-500">2024</p>
+            </div>
+            <div class="mb-3">
+              <p class="font-bold text-blue-600">M.S. Statistics</p>
+              <p class="text-sm">University of Sierra Leone</p>
+              <p class="text-xs text-gray-500">2023</p>
+            </div>
+            <div class="mb-3">
+              <p class="font-bold text-blue-600">B.S. Software Engineering</p>
+              <p class="text-sm">Limkokwing University</p>
+              <p class="text-xs text-gray-500">2020</p>
+            </div>
+            <div>
+              <p class="font-bold text-blue-600">B.S. Mathematics & Statistics</p>
+              <p class="text-sm">University of Sierra Leone</p>
+              <p class="text-xs text-gray-500">2020</p>
+            </div>
+          </div>
+
+          <!-- Publications -->
+          <div class="section">
+            <h2 class="section-title"><i class="fas fa-book"></i> Publications in Progress</h2>
+            <div class="mb-2">
+              <p class="text-sm font-semibold">Predictive Modeling of Diabetes in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-sm font-semibold">Predictive Modeling of Lung Cancer in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-sm font-semibold">Predictive Modeling of Colon Cancer in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">Predictive Modeling of Cervical Cancer in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Middle and right columns -->
+        <div class="col-span-2">
+          <!-- Technical Skills -->
+          <div class="section">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> Technical Skills</h2>
+            
+            <div class="mb-3">
+              <h3 class="text-sm font-bold text-blue-600 mb-1"><i class="fas fa-code mr-1"></i> Programming Languages</h3>
+              <div class="flex flex-wrap">
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">R</span>
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Java</span>
+                <span class="skill-badge">C++</span>
+                <span class="skill-badge">HTML5</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">PHP</span>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <h3 class="text-sm font-bold text-blue-600 mb-1"><i class="fas fa-chart-line mr-1"></i> Data Science</h3>
+              <div class="flex flex-wrap">
+                <span class="skill-badge">Machine Learning</span>
+                <span class="skill-badge">Statistical Analysis</span>
+                <span class="skill-badge">Data Visualization</span>
+                <span class="skill-badge">Predictive Modeling</span>
+                <span class="skill-badge">Deep Learning</span>
+                <span class="skill-badge">GIS</span>
+                <span class="skill-badge">Shiny</span>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <h3 class="text-sm font-bold text-blue-600 mb-1"><i class="fas fa-database mr-1"></i> Databases & Cloud</h3>
+              <div class="flex flex-wrap">
+                <span class="skill-badge">SQL</span>
+                <span class="skill-badge">MySQL</span>
+                <span class="skill-badge">MongoDB</span>
+                <span class="skill-badge">Neo4j</span>
+                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">Azure</span>
+              </div>
+            </div>
+            
+            <div>
+              <h3 class="text-sm font-bold text-blue-600 mb-1"><i class="fas fa-microscope mr-1"></i> Domain Expertise</h3>
+              <div class="flex flex-wrap">
+                <span class="skill-badge">Epidemiology</span>
+                <span class="skill-badge">Public Health</span>
+                <span class="skill-badge">Malaria Research</span>
+                <span class="skill-badge">Health Informatics</span>
+                <span class="skill-badge">Cancer Research</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Projects -->
+          <div class="section">
+            <h2 class="section-title"><i class="fas fa-project-diagram"></i> Key Projects</h2>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h3 class="font-bold text-blue-600 text-sm">Disease Prediction Dashboards</h3>
+                <p class="text-xs text-gray-600 mb-1">Built interactive visualization tools for cancer and diabetes prediction models</p>
+                <div>
+                  <span class="project-badge">React</span>
+                  <span class="project-badge">D3.js</span>
+                  <span class="project-badge">ML</span>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="font-bold text-blue-600 text-sm">Malaria Intervention Automation</h3>
+                <p class="text-xs text-gray-600 mb-1">Automated Sub-National Tailoring of malaria interventions</p>
+                <div>
+                  <span class="project-badge">Python</span>
+                  <span class="project-badge">R</span>
+                  <span class="project-badge">GIS</span>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="font-bold text-blue-600 text-sm">Statistical Analysis Automation</h3>
+                <p class="text-xs text-gray-600 mb-1">Developed automated tools for descriptive and inferential statistical analysis</p>
+                <div>
+                  <span class="project-badge">Python</span>
+                  <span class="project-badge">R</span>
+                  <span class="project-badge">Shiny</span>
+                </div>
+              </div>
+              
+              <div>
+                <h3 class="font-bold text-blue-600 text-sm">Malaria Intervention Analysis</h3>
+                <p class="text-xs text-gray-600 mb-1">Developed predictive models to optimize resource allocation for malaria control</p>
+                <div>
+                  <span class="project-badge">Python</span>
+                  <span class="project-badge">R</span>
+                  <span class="project-badge">GIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Professional Experience (First Part) -->
+          <div class="section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Research Data Analyst Associate -->
+              <div class="experience-item">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-blue-600 text-sm">Research Data Analyst Associate</h3>
+                  <span class="date-badge">2024 - Present</span>
+                </div>
+                <p class="text-sm">Northwestern University - Chicago, IL</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+                  <li>Conduct statistical analyses for epidemiological research on infectious diseases</li>
+                  <li>Develop predictive models for public health data using machine learning</li>
+                </ul>
+              </div>
+              
+              <!-- CEO -->
+              <div class="experience-item">
+                <div class="flex justify-between items-start">
+                  <h3 class="font-bold text-blue-600 text-sm">CEO (Remote)</h3>
+                  <span class="date-badge">Jan 2023 - Jan 2025</span>
+                </div>
+                <p class="text-sm">Informatics Consultancy Firm - Sierra Leone</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+                  <li>Led data-driven projects for government agencies and NGOs</li>
+                  <li>Managed a team of data scientists and software engineers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Professional Experience (Continues to page 2) -->
+      <div class="section">
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Malaria Epidemiologist -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Malaria Epidemiologist (Remote)</h3>
+              <span class="date-badge">Feb 2024 - July 2024</span>
+            </div>
+            <p class="text-sm">World Health Organization (WHO) - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Led data analytics team for Sub National Tailoring of malaria interventions</li>
+              <li>Developed geospatial models to optimize resource allocation</li>
+            </ul>
+          </div>
+          
+          <!-- Technical Assistant -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Technical Assistant – ITN Campaign</h3>
+              <span class="date-badge">Jun 2023 - Dec 2023</span>
+            </div>
+            <p class="text-sm">Catholic Relief Services - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Assisted in planning and executing ITN distribution campaigns</li>
+              <li>Developed data collection tools and analysis frameworks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Second Page -->
+  <div class="page print-break">
+    <div class="page-content">
+      <!-- Professional Experience (Continued) -->
+      <div class="section">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience (continued)</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <!-- Program Manager -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Program Manager</h3>
+              <span class="date-badge">June 2022 - Feb 2023</span>
+            </div>
+            <p class="text-sm">FOCUS 1000 - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Oversaw Malaria, HIV & TB (NFM-3 Project) implementation and reporting</li>
+              <li>Managed program budget and team of staff</li>
+            </ul>
+          </div>
+          
+          <!-- Mathematics & Statistics Lecturer -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Mathematics & Statistics Lecturer</h3>
+              <span class="date-badge">Jan 2021 - Jan 2023</span>
+            </div>
+            <p class="text-sm">University of Sierra Leone - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Taught undergraduate courses in Mathematics and Statistics</li>
+              <li>Developed curriculum and assessment materials</li>
+            </ul>
+          </div>
+          
+          <!-- Software Developer -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Software Developer</h3>
+              <span class="date-badge">Aug 2021 - Jan 2022</span>
+            </div>
+            <p class="text-sm">Sierra Urban Malaria Research, COMAHS - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Managed data processing for malaria research projects</li>
+              <li>Developed custom software solutions for data collection and analysis</li>
+            </ul>
+          </div>
+          
+          <!-- Data Processing Manager -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Data Processing Manager-MIS 2021</h3>
+              <span class="date-badge">Jan 2021 - Jul 2021</span>
+            </div>
+            <p class="text-sm">Catholic Relief Services - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Led data processing and analysis team</li>
+              <li>Streamlined data workflows for improved efficiency</li>
+            </ul>
+          </div>
+          
+          <!-- M&E Officer -->
+          <div class="experience-item">
+            <div class="flex justify-between items-start">
+              <h3 class="font-bold text-blue-600 text-sm">Monitoring & Evaluation Officer</h3>
+              <span class="date-badge">Jun 2020 - Dec 2020</span>
+            </div>
+            <p class="text-sm">Catholic Relief Services - Sierra Leone</p>
+            <ul class="text-xs text-gray-600 list-disc pl-4 mt-1">
+              <li>Developed software that tracks malaria, HIV and TB indicators</li>
+              <li>Conducted data quality assessments and program evaluations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional Memberships -->
+      <div class="section">
+        <h2 class="section-title"><i class="fas fa-users"></i> Professional Memberships</h2>
+        <ul class="pl-5 list-disc">
+          <li class="text-sm mb-1">America Society of Tropical Medicine and Hygiene (ASTMH)</li>
+          <li class="text-sm mb-1">Applied Malaria Modeling Network (AMMnet)</li>
+          <li class="text-sm mb-1">International Network of Researchers</li>
+          <li class="text-sm">GWU Data Science Association, Washington DC</li>
+        </ul>
+      </div>
+
+      <!-- Research Interests -->
+      <div class="section">
+        <h2 class="section-title"><i class="fas fa-flask"></i> Research Interests</h2>
+        <div class="flex flex-wrap">
+          <span class="skill-badge">Infectious Disease Modeling</span>
+          <span class="skill-badge">Machine Learning in Healthcare</span>
+          <span class="skill-badge">Cancer Prediction Models</span>
+          <span class="skill-badge">Statistical Computation</span>
+          <span class="skill-badge">Health Equity Analytics</span>
+          <span class="skill-badge">GIS for Public Health</span>
+          <span class="skill-badge">Data Automation</span>
+          <span class="skill-badge">Biostatistics</span>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="section">
+        <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications & Training</h2>
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <p class="text-sm font-medium">Advanced Data Science with IBM</p>
+            <p class="text-xs text-gray-600">IBM, Coursera</p>
+          </div>
+          <div>
+            <p class="text-sm font-medium">Machine Learning Specialization</p>
+            <p class="text-xs text-gray-600">Stanford University, Coursera</p>
+          </div>
+          <div>
+            <p class="text-sm font-medium">Deep Learning Specialization</p>
+            <p class="text-xs text-gray-600">deeplearning.ai</p>
+          </div>
+          <div>
+            <p class="text-sm font-medium">GIS for Public Health</p>
+            <p class="text-xs text-gray-600">Johns Hopkins University</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- References -->
+      <div class="mt-12 bg-blue-700 text-white p-4 rounded-lg">
+        <h2 class="text-xl font-bold mb-4 text-center">References</h2>
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <p class="font-bold"><i class="fas fa-user-circle mr-2"></i>Dr. Jafari</p>
+            <p class="text-blue-200">George Washington University</p>
+            <a href="mailto:rjafari@email.gwu.edu" class="text-blue-200 hover:text-white">rjafari@email.gwu.edu</a>
+          </div>
+          <div>
+            <p class="font-bold"><i class="fas fa-user-circle mr-2"></i>Dr. Gerardin</p>
+            <p class="text-blue-200">Northwestern University</p>
+            <a href="mailto:jgerardin@northwestern.edu" class="text-blue-200 hover:text-white">jgerardin@northwestern.edu</a>
+          </div>
+          <div>
+            <p class="font-bold"><i class="fas fa-user-circle mr-2"></i>Dr. Kanu</p>
+            <p class="text-blue-200">World Health Organization</p>
+            <a href="mailto:kanua@who.int" class="text-blue-200 hover:text-white">kanua@who.int</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.addEventListener('beforeprint', function() {
+        document.body.classList.add('print-mode');
+      });
+      
+      window.addEventListener('afterprint', function() {
+        document.body.classList.remove('print-mode');
+      });
+    });
+  </script>
+</body>
+</html><body class="bg-gray-100">
   <div class="page-container">
     <!-- First page -->
     <div class="first-page p-2">
