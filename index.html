@@ -509,4 +509,735 @@
       });
     });
   </script>
- 
+</body><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Sillah Kanu - Interactive CV Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Timeline style for experience section */
+    .timeline-before::before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 2px;
+      bottom: 2px;
+      width: 2px;
+      background-color: #3b82f6;
+    }
+    
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #3b82f6;
+    }
+    
+    /* Skill bar animation */
+    @keyframes fillBar {
+      from { width: 0; }
+      to { width: var(--skill-level); }
+    }
+    
+    .skill-bar {
+      animation: fillBar 1.5s ease-out forwards;
+    }
+    
+    /* Hover effects */
+    .experience-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .experience-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* Print styles */
+    @media print {
+      .bg-blue-700 { background-color: #1d4ed8 !important; print-color-adjust: exact; }
+      .bg-blue-600 { background-color: #2563eb !important; print-color-adjust: exact; }
+      .text-white { color: white !important; print-color-adjust: exact; }
+      .shadow-lg, .shadow-md { box-shadow: none !important; }
+      @page { margin: 0.5cm; }
+    }
+    
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .grid-cols-3 {
+        grid-template-columns: 1fr;
+      }
+      .col-span-2 {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100">
+  <div class="container flex flex-col p-6 max-w-7xl mx-auto">
+    <!-- First page -->
+    <div class="first-page">
+      <!-- Header -->
+      <div class="bg-blue-700 text-white p-6 rounded-t-lg shadow-lg no-break">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <h1 class="text-3xl font-bold">Mohamed Sillah Kanu</h1>
+            <p class="text-blue-100 mt-1">Data Scientist | Statistician | Software Engineer</p>
+          </div>
+          <div class="text-right">
+            <p class="flex items-center justify-end gap-2">
+              <i class="fas fa-globe"></i>
+              <a href="https://mohamedsillahkanu.github.io/portfolio/" class="text-blue-200 hover:text-white transition" target="_blank">mohamedsillahkanu.github.io/portfolio</a>
+            </p>
+            <p class="flex items-center justify-end gap-2">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:sillahmohamedkanu@gmail.com" class="text-blue-200 hover:text-white transition">sillahmohamedkanu@gmail.com</a>
+            </p>
+            <p class="flex items-center justify-end gap-2">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+12408896759" class="text-blue-200 hover:text-white transition">+1 240-889-6759</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main content - First page -->
+      <div class="grid grid-cols-3 gap-4 mt-4">
+        <!-- Left column -->
+        <div class="col-span-1">
+          <!-- Professional Summary -->
+          <div class="bg-white p-4 rounded-lg shadow-md mb-4 hover:shadow-lg transition no-break">
+            <h2 class="text-lg font-bold text-blue-700 border-b border-gray-200 pb-2 mb-2 flex items-center">
+              <i class="fas fa-user-tie mr-2"></i> Professional Summary
+            </h2>
+            <p class="text-xs leading-relaxed">
+              Highly skilled Data Scientist, Statistician, and Software Engineer with extensive
+              experience in data analytics, predictive modeling, and software development.
+              Currently applying advanced data analytics in epidemiology and public health research
+              at Northwestern University, with a focus on developing innovative solutions for complex health challenges.
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="bg-white p-4 rounded-lg shadow-md mb-4 hover:shadow-lg transition no-break">
+            <h2 class="text-lg font-bold text-blue-700 border-b border-gray-200 pb-2 mb-2 flex items-center">
+              <i class="fas fa-graduation-cap mr-2"></i> Education
+            </h2>
+            <div class="mb-2">
+              <div class="flex items-start">
+                <div class="text-blue-600 mr-2">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-blue-600 text-xs">M.S. Data Science</p>
+                  <p class="text-xs">The George Washington University, USA</p>
+                  <p class="text-xs text-gray-500">2024</p>
+                </div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <div class="flex items-start">
+                <div class="text-blue-600 mr-2">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-blue-600 text-xs">M.S. Statistics</p>
+                  <p class="text-xs">University of Sierra Leone</p>
+                  <p class="text-xs text-gray-500">2023</p>
+                </div>
+              </div>
+            </div>
+            <div class="mb-2">
+              <div class="flex items-start">
+                <div class="text-blue-600 mr-2">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-blue-600 text-xs">B.S. Software Engineering</p>
+                  <p class="text-xs">Limkokwing University</p>
+                  <p class="text-xs text-gray-500">2020</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex items-start">
+                <div class="text-blue-600 mr-2">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div>
+                  <p class="font-bold text-blue-600 text-xs">B.S. Mathematics & Statistics</p>
+                  <p class="text-xs">University of Sierra Leone</p>
+                  <p class="text-xs text-gray-500">2020</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publications -->
+          <div class="bg-white p-4 rounded-lg shadow-md mb-4 hover:shadow-lg transition no-break">
+            <h2 class="text-lg font-bold text-blue-700 border-b border-gray-200 pb-2 mb-2 flex items-center">
+              <i class="fas fa-book mr-2"></i> Publications in Progress
+            </h2>
+            <div class="mb-2">
+              <p class="text-xs font-semibold">Predictive Modeling of Diabetes in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-xs font-semibold">Predictive Modeling of Lung Cancer in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div class="mb-2">
+              <p class="text-xs font-semibold">Predictive Modeling of Colon Cancer in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div>
+              <p class="text-xs font-semibold">Predictive Modeling of Cervical Cancer in the US Using 10 Classification Machine Learning Models</p>
+              <p class="text-xs text-gray-600">In preparation, 2025</p>
+            </div>
+            <div class="mt-2 text-center">
+              <span class="inline-block bg-blue-100 text-blue-700 py-1 px-2 rounded-full text-xs font-medium">
+                Multiple papers in preparation
+              </span>
+            </div>
+          </div>
+
+          <!-- Memberships -->
+          <div class="bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition no-break">
+            <h2 class="text-lg font-bold text-blue-700 border-b border-gray-200 pb-2 mb-2 flex items-center">
+              <i class="fas fa-users mr-2"></i> Professional Memberships
+            </h2>
+            <ul class="space-y-1">
+              <li class="flex items-start">
+                <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+                <span class="text-xs">America Society of Tropical Medicine and Hygiene (ASTMH)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+                <span class="text-xs">Applied Malaria Modeling Network (AMMnet)</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+                <span class="text-xs">International Network of Researchers</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+                <span class="text-xs">GWU Data Science Association, Washington DC</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Middle and right columns -->
+        <div class="col-span-2">
+          <!-- Technical Skills -->
+          <div class="bg-white p-4 rounded-lg shadow-md mb-4 hover:shadow-lg transition no-break">
+            <h2 class="text-lg font-bold text-blue-700 border-b border-gray-200 pb-2 mb-2 flex items-center">
+              <i class="fas fa-laptop-code mr-2"></i> Technical Skills
+            </h2>
+            
+            <!-- Skills categories -->
+            <div class="space-y-3">
+              <!-- Programming Languages -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-1 text-xs flex items-center">
+                  <i class="fas fa-code mr-2"></i> Programming Languages
+                </h3>
+                <div class="flex flex-wrap gap-1 mb-2">
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Python</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">R</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">JavaScript</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">React</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Java</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">C++</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">HTML5</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">CSS</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">PHP</span>
+                </div>
+              </div>
+              
+              <!-- Data Science -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-1 text-xs flex items-center">
+                  <i class="fas fa-chart-line mr-2"></i> Data Science
+                </h3>
+                <div class="flex flex-wrap gap-1 mb-2">
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Machine Learning</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Statistical Analysis</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Data Visualization</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Predictive Modeling</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Deep Learning</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">GIS</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Shiny</span>
+                </div>
+              </div>
+              
+              <!-- Databases & Cloud -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-1 text-xs flex items-center">
+                  <i class="fas fa-database mr-2"></i> Databases & Cloud
+                </h3>
+                <div class="flex flex-wrap gap-1 mb-2">
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">SQL</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">MySQL</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">MongoDB</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Neo4j</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">AWS</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Azure</span>
+                </div>
+              </div>
+              
+              <!-- Domain Expertise -->
+              <div>
+                <h3 class="font-bold text-blue-600 mb-1 text-xs flex items-center">
+                  <i class="fas fa-microscope mr-2"></i> Domain Expertise
+                </h3>
+                <div class="flex flex-wrap gap-1">
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Epidemiology</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Public Health</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Malaria Research</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Health Informatics</span>
+                  <span class="bg-blue-600 text-white px-2 py-0.5 rounded-md text-xs font-medium">Cancer Research</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Projects -->
+          <div class="bg-white p-4 rounded-lg shadow-md mb-4 hover:shadow-lg transition no-break">
+            <h2 class="text-lg font-bold text-blue-700 border-b border-gray-200 pb-2 mb-2 flex items-center">
+              <i class="fas fa-project-diagram mr-2"></i> Key Projects
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="mb-2">
+                <h3 class="font-bold text-blue-600 text-xs">Disease Prediction Dashboards</h3>
+                <p class="text-xs text-gray-600 mb-1">Built interactive visualization tools for cancer and diabetes prediction models</p>
+                <div class="flex text-xs text-gray-500">
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">React</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">D3.js</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 text-xs">ML</span>
+                </div>
+              </div>
+              
+              <div class="mb-2">
+                <h3 class="font-bold text-blue-600 text-xs">Malaria Intervention Automation</h3>
+                <p class="text-xs text-gray-600 mb-1">Automated Sub-National Tailoring of malaria interventions</p>
+                <div class="flex text-xs text-gray-500">
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">Python</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">R</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 text-xs">GIS</span>
+                </div>
+              </div>
+              
+              <div class="mb-2">
+                <h3 class="font-bold text-blue-600 text-xs">Statistical Analysis Automation</h3>
+                <p class="text-xs text-gray-600 mb-1">Developed automated tools for descriptive and inferential statistical analysis</p>
+                <div class="flex text-xs text-gray-500">
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">Python</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">R</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 text-xs">Shiny</span>
+                </div>
+              </div>
+              
+              <div class="mb-2">
+                <h3 class="font-bold text-blue-600 text-xs">Malaria Intervention Analysis</h3>
+                <p class="text-xs text-gray-600 mb-1">Developed predictive models to optimize resource allocation for malaria control</p>
+                <div class="flex text-xs text-gray-500">
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">Python</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 mr-1 text-xs">R</span>
+                  <span class="bg-blue-100 text-blue-800 rounded px-1 py-0.5 text-xs">GIS</span>
+                </div>
+              </div>
+            </div>
+          </div>S. Mathematics & Statistics</p>
+                <p class="text-sm">University of Sierra Leone</p>
+                <p class="text-xs text-gray-500">2020</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Projects & Research -->
+        <div class="bg-white p-5 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-4 flex items-center">
+            <i class="fas fa-project-diagram mr-2"></i> Key Projects
+          </h2>
+          <div class="mb-3">
+            <h3 class="font-bold text-blue-600">Malaria Intervention Analysis</h3>
+            <p class="text-xs text-gray-600 mb-1">Developed predictive models to optimize resource allocation for malaria control in Sierra Leone</p>
+            <div class="flex text-xs text-gray-500">
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">Python</span>
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">R</span>
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1">GIS</span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <h3 class="font-bold text-blue-600">Disease Prediction Dashboards</h3>
+            <p class="text-xs text-gray-600 mb-1">Built interactive visualization tools for cancer and diabetes prediction models</p>
+            <div class="flex text-xs text-gray-500">
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">React</span>
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">D3.js</span>
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1">ML</span>
+            </div>
+          </div>
+          <div class="mb-1">
+            <h3 class="font-bold text-blue-600">Malaria Intervention Automation</h3>
+            <p class="text-xs text-gray-600 mb-1">Automated Sub-National Tailoring of malaria interventions</p>
+            <div class="flex text-xs text-gray-500">
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">Python</span>
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1 mr-1">R</span>
+              <span class="bg-blue-100 text-blue-800 rounded px-2 py-1">GIS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Publications Highlight -->
+        <div class="bg-white p-5 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-4 flex items-center">
+            <i class="fas fa-book mr-2"></i> Publications in Progress
+          </h2>
+          <div class="mb-3">
+            <p class="text-sm font-semibold">Predictive Modeling of Diabetes in the US Using 10 Classification Machine Learning Models</p>
+            <p class="text-xs text-gray-600">In preparation, 2025</p>
+          </div>
+          <div class="mb-3">
+            <p class="text-sm font-semibold">Predictive Modeling of Lung Cancer in the US Using 10 Classification Machine Learning Models</p>
+            <p class="text-xs text-gray-600">In preparation, 2025</p>
+          </div>
+          <div class="mb-3">
+            <p class="text-sm font-semibold">Predictive Modeling of Colon Cancer in the US Using 10 Classification Machine Learning Models</p>
+            <p class="text-xs text-gray-600">In preparation, 2025</p>
+          </div>
+          <div>
+            <p class="text-sm font-semibold">Predictive Modeling of Cervical Cancer in the US Using 10 Classification Machine Learning Models</p>
+            <p class="text-xs text-gray-600">In preparation, 2025</p>
+          </div>
+          <div class="mt-4 text-center">
+            <span class="inline-block bg-blue-100 text-blue-700 py-1 px-3 rounded-full text-xs font-medium">
+              Multiple papers in preparation
+            </span>
+          </div>
+        </div>
+
+        <!-- Memberships -->
+        <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-4 flex items-center">
+            <i class="fas fa-users mr-2"></i> Professional Memberships
+          </h2>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+              <span class="text-sm">America Society of Tropical Medicine and Hygiene (ASTMH)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+              <span class="text-sm">Applied Malaria Modeling Network (AMMnet)</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+              <span class="text-sm">International Network of Researchers</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-certificate text-blue-600 mt-1 mr-2"></i>
+              <span class="text-sm">GWU Data Science Association, Washington DC</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Middle and right columns -->
+      <div class="col-span-1 md:col-span-2">
+        <!-- Technical Skills & Proficiency Level -->
+        <div class="bg-white p-5 rounded-lg shadow-md mb-6 hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-4 flex items-center">
+            <i class="fas fa-laptop-code mr-2"></i> Technical Skills
+          </h2>
+          
+          <!-- Skills categories -->
+          <div class="space-y-4">
+            <!-- Programming Languages -->
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2 text-sm flex items-center">
+                <i class="fas fa-code mr-2"></i> Programming Languages
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Python</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">R</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">JavaScript</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">React</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Java</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">C++</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">HTML5</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">CSS</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">PHP</span>
+              </div>
+            </div>
+            
+            <!-- Data Science -->
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2 text-sm flex items-center">
+                <i class="fas fa-chart-line mr-2"></i> Data Science
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Machine Learning</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Statistical Analysis</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Data Visualization</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Predictive Modeling</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Deep Learning</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">GIS</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Shiny</span>
+              </div>
+            </div>
+            
+            <!-- Databases & Cloud -->
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2 text-sm flex items-center">
+                <i class="fas fa-database mr-2"></i> Databases & Cloud
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">SQL</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">MySQL</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">MongoDB</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Neo4j</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">AWS</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Azure</span>
+              </div>
+            </div>
+            
+            <!-- Domain Expertise -->
+            <div>
+              <h3 class="font-bold text-blue-600 mb-2 text-sm flex items-center">
+                <i class="fas fa-microscope mr-2"></i> Domain Expertise
+              </h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Epidemiology</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Public Health</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Malaria Research</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Health Informatics</span>
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-medium">Cancer Research</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition">
+          <h2 class="text-xl font-bold text-blue-700 border-b border-gray-200 pb-2 mb-4 flex items-center">
+            <i class="fas fa-briefcase mr-2"></i> Professional Experience
+          </h2>
+          <div class="relative pl-8 space-y-6 timeline-before">
+            <!-- Research Data Analyst Associate -->
+            <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                <h3 class="font-bold text-blue-600 text-lg">Research Data Analyst Associate</h3>
+                <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">2024 - Present</span>
+              </div>
+              <p class="text-sm font-medium mb-1">Northwestern University - Chicago, IL</p>
+              <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                <li>Conduct statistical analyses for epidemiological research on infectious diseases</li>
+                <li>Develop predictive models for public health data using machine learning techniques</li>
+                <li>Collaborate with interdisciplinary teams to address complex health challenges</li>
+              </ul>
+            </div>
+            
+            <!-- CEO -->
+            <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                <h3 class="font-bold text-blue-600 text-lg">CEO (Remote)</h3>
+                <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Jan 2023 - Jan 2025</span>
+              </div>
+              <p class="text-sm font-medium mb-1">Informatics Consultancy Firm - Sierra Leone</p>
+              <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                <li>Led data-driven projects for government agencies and NGOs</li>
+                <li>Managed a team of 12 data scientists and software engineers</li>
+                <li>Delivered analytics solutions for health, education, and agriculture sectors</li>
+              </ul>
+            </div>
+            
+            <!-- Malaria Epidemiologist -->
+            <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                <h3 class="font-bold text-blue-600 text-lg">Malaria Epidemiologist (Remote)</h3>
+                <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Feb 2024 - July 2024</span>
+              </div>
+              <p class="text-sm font-medium mb-1">World Health Organization (WHO) - Sierra Leone</p>
+              <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                <li>Led data analytics team for Sub National Tailoring of malaria interventions</li>
+                <li>Developed geospatial models to optimize resource allocation</li>
+                <li>Coordinated with government stakeholders on implementation strategies</li>
+              </ul>
+            </div>
+            
+            <!-- Technical Assistant -->
+            <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                <h3 class="font-bold text-blue-600 text-lg">Technical Assistant – ITN Campaign</h3>
+                <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Jun 2023 - Dec 2023</span>
+              </div>
+              <p class="text-sm font-medium mb-1">Catholic Relief Services - Sierra Leone</p>
+              <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                <li>Assisted in planning and executing ITN distribution campaigns</li>
+                <li>Developed data collection tools and analysis frameworks</li>
+                <li>Trained field staff on data collection protocols</li>
+              </ul>
+            </div>
+            
+            <!-- Show More Button -->
+            <div class="text-center pt-2">
+              <button id="showMoreExperience" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition">
+                Show More Experience <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+            </div>
+            
+            <!-- Hidden Experience Items (initially hidden) -->
+            <div id="hiddenExperience" class="hidden space-y-6">
+              <!-- Program Manager -->
+              <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                  <h3 class="font-bold text-blue-600 text-lg">Program Manager</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">June 2022 - Feb 2023</span>
+                </div>
+                <p class="text-sm font-medium mb-1">FOCUS 1000 - Sierra Leone</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                  <li>Oversaw Malaria, HIV & TB (NFM-3 Project) implementation and reporting</li>
+                  <li>Managed program budget of $1.2M and team of 15 staff</li>
+                  <li>Established monitoring and evaluation framework</li>
+                </ul>
+              </div>
+              
+              <!-- Mathematics & Statistics Lecturer -->
+              <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                  <h3 class="font-bold text-blue-600 text-lg">Mathematics & Statistics Lecturer</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Jan 2021 - Jan 2023</span>
+                </div>
+                <p class="text-sm font-medium mb-1">University of Sierra Leone - Sierra Leone</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                  <li>Taught undergraduate courses in Mathematics and Statistics</li>
+                  <li>Developed curriculum and assessment materials</li>
+                  <li>Supervised student research projects</li>
+                </ul>
+              </div>
+              
+              <!-- Software Developer -->
+              <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                  <h3 class="font-bold text-blue-600 text-lg">Software Developer</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Aug 2021 - Jan 2022</span>
+                </div>
+                <p class="text-sm font-medium mb-1">Sierra Urban Malaria Research, COMAHS - Sierra Leone</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                  <li>Managed data processing for malaria research projects</li>
+                  <li>Developed custom software solutions for data collection and analysis</li>
+                  <li>Created visualization dashboards for stakeholder engagement</li>
+                </ul>
+              </div>
+              
+              <!-- Data Processing Manager -->
+              <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                  <h3 class="font-bold text-blue-600 text-lg">Data Processing Manager-MIS 2021</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Jan 2021 - Jul 2021</span>
+                </div>
+                <p class="text-sm font-medium mb-1">Catholic Relief Services - Sierra Leone</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                  <li>Led data processing and analysis team</li>
+                  <li>Streamlined data workflows for improved efficiency</li>
+                  <li>Implemented quality control measures for data integrity</li>
+                </ul>
+              </div>
+              
+              <!-- M&E Officer -->
+              <div class="relative timeline-dot experience-card p-3 rounded-lg border border-gray-100">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                  <h3 class="font-bold text-blue-600 text-lg">Monitoring & Evaluation Officer</h3>
+                  <span class="text-xs bg-blue-100 text-blue-700 py-1 px-2 rounded-full font-medium mt-1 md:mt-0">Jun 2020 - Dec 2020</span>
+                </div>
+                <p class="text-sm font-medium mb-1">Catholic Relief Services - Sierra Leone</p>
+                <ul class="text-xs text-gray-600 list-disc pl-4 space-y-1">
+                  <li>Developed software that tracks malaria, HIV and TB indicators</li>
+                  <li>Conducted data quality assessments and program evaluations</li>
+                  <li>Produced analytical reports for program improvement</li>
+                </ul>
+              </div>
+              
+              <!-- Show Less Button -->
+              <div class="text-center pt-2">
+                <button id="showLessExperience" class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-blue-200 transition">
+                  Show Less <i class="fas fa-chevron-up ml-1"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="mt-6 bg-blue-800 text-white p-5 rounded-b-lg shadow-lg"> 
+      <h2 class="text-xl font-bold mb-3 text-center">References</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="flex items-start">
+          <i class="fas fa-user-circle text-blue-300 text-xl mt-1 mr-3"></i>
+          <div>
+            <p class="font-bold">Dr. Jafari</p>
+            <p class="text-sm text-blue-200">George Washington University</p>
+            <a href="mailto:rjafari@email.gwu.edu" class="text-xs text-blue-200 hover:text-white transition">rjafari@email.gwu.edu</a>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <i class="fas fa-user-circle text-blue-300 text-xl mt-1 mr-3"></i>
+          <div>
+            <p class="font-bold">Dr. Gerardin</p>
+            <p class="text-sm text-blue-200">Northwestern University</p>
+            <a href="mailto:jgerardin@northwestern.edu" class="text-xs text-blue-200 hover:text-white transition">jgerardin@northwestern.edu</a>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <i class="fas fa-user-circle text-blue-300 text-xl mt-1 mr-3"></i>
+          <div>
+            <p class="font-bold">Dr. Kanu</p>
+            <p class="text-sm text-blue-200">World Health Organization</p>
+            <a href="mailto:kanua@who.int" class="text-xs text-blue-200 hover:text-white transition">kanua@who.int</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Simple JavaScript for the show more/less functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const showMoreBtn = document.getElementById('showMoreExperience');
+      const showLessBtn = document.getElementById('showLessExperience');
+      const hiddenExp = document.getElementById('hiddenExperience');
+      
+      showMoreBtn.addEventListener('click', function() {
+        hiddenExp.classList.remove('hidden');
+        showMoreBtn.classList.add('hidden');
+      });
+      
+      showLessBtn.addEventListener('click', function() {
+        hiddenExp.classList.add('hidden');
+        showMoreBtn.classList.remove('hidden');
+        // Scroll to the show more button
+        showMoreBtn.scrollIntoView({ behavior: 'smooth' });
+      });
+      
+      // Initialize skill bar animations with slight delay for visual effect
+      const skillBars = document.querySelectorAll('.skill-bar');
+      skillBars.forEach((bar, index) => {
+        setTimeout(() => {
+          bar.style.width = bar.style.getPropertyValue('--skill-level');
+        }, 100 + (index * 50));
+      });
+    });
+  </script>
+</body>
+</html>
